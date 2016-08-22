@@ -4,6 +4,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var nano = require('gulp-cssnano');
+var autoprefixer = require('gulp-autoprefixer');
 var replaceName = require('gulp-replace-name');
 
 gulp.task('default', ['sass', 'watch']);
@@ -11,6 +12,7 @@ gulp.task('default', ['sass', 'watch']);
 gulp.task('sass', function() {
   return gulp.src('./sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(gulp.dest('./css'))
     .pipe(nano())
     .pipe(replaceName(/\.css/g, '.min.css'))

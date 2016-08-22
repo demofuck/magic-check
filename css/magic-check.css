@@ -1,3 +1,9 @@
+@-webkit-keyframes hover-color {
+  from {
+    border-color: #c0c0c0; }
+  to {
+    border-color: #3e97eb; } }
+
 @keyframes hover-color {
   from {
     border-color: #c0c0c0; }
@@ -22,9 +28,12 @@
   vertical-align: middle; }
   .magic-radio + label:hover:before,
   .magic-checkbox + label:hover:before {
-    animation-duration: 0.4s;
-    animation-fill-mode: both;
-    animation-name: hover-color; }
+    -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-name: hover-color;
+            animation-name: hover-color; }
   .magic-radio + label:before,
   .magic-checkbox + label:before {
     position: absolute;
@@ -53,14 +62,16 @@
   .magic-radio[disabled] + label:hover:before,
   .magic-checkbox[disabled] + label:hover:before {
     border: 1px solid #e4e4e4;
-    animation-name: none; }
+    -webkit-animation-name: none;
+            animation-name: none; }
   .magic-radio[disabled] + label:before,
   .magic-checkbox[disabled] + label:before {
     border-color: #e4e4e4; }
 
 .magic-radio:checked + label:before,
 .magic-checkbox:checked + label:before {
-  animation-name: none; }
+  -webkit-animation-name: none;
+          animation-name: none; }
 
 .magic-radio:checked + label:after,
 .magic-checkbox:checked + label:after {
@@ -95,7 +106,8 @@
   box-sizing: border-box;
   width: 6px;
   height: 12px;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   border-width: 2px;
   border-style: solid;
   border-color: #fff;
